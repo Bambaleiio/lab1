@@ -16,7 +16,6 @@ public class lab1_1 {
         System.out.print("Year of birth: ");
         year = scanner.nextInt();
 
-        // IllegalArgumentException
         try {
             LocalDate dateOfBirth = LocalDate.of(year, month, day);
             LocalDate now = LocalDate.now();

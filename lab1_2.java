@@ -2,7 +2,7 @@ package lw1;
 
 import java.util.Scanner;
 
-public class second {
+public class lab1_2 {
     public static String getTimeOfYear(int month) {
         if (month < 3 || month == 12) {
             return ("Winter");

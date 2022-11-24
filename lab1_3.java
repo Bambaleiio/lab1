@@ -2,7 +2,7 @@ package lw1;
 
 import java.util.Scanner;
 
-public class third {
+public class lab1_3 {
     public static double pow(int base, int exp) {
         double res = 1;
         if (exp > 0) {

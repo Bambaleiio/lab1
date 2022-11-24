@@ -16,9 +16,9 @@ public class fourth {
 
         for (int num = 1; num <= amountOfPoints; num++) {
             double x, y;
-            System.out.print("X of the " + num + " point: ");
+            System.out.printf("X of the %d point: ", num);
             x = scanner.nextDouble();
-            System.out.print("Y of the " + num + " point: ");
+            System.out.printf("Y of the %d point: ", num);
             y = scanner.nextDouble();
 
             answer += x * x + y * x <= radius * radius ? 1 : 0;

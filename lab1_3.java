@@ -1,5 +1,8 @@
 package lw1;
 
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class lab1_3 {
@@ -25,6 +28,12 @@ public class lab1_3 {
         System.out.print("n: ");
         n = scanner.nextInt();
 
-        System.out.println(pow(x, n));
+        if (x == 0 && n < 0) {
+            System.out.println("Invalid Input");
+        } else {
+            DecimalFormat df = new DecimalFormat("0", DecimalFormatSymbols.getInstance(Locale.ENGLISH));
+            df.setMaximumFractionDigits(340);
+            System.out.println(df.format(pow(x, n)));
+        }
     }
 }

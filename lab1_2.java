@@ -15,15 +15,23 @@ public class lab1_2 {
     }
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int day, month;
+        try {
+            Scanner scanner = new Scanner(System.in);
+            int day, month;
 
-        System.out.print("Day: ");
-        day = scanner.nextInt();
+            System.out.print("Day: ");
+            day = scanner.nextInt();
 
-        System.out.print("Month: ");
-        month = scanner.nextInt();
+            System.out.print("Month: ");
+            month = scanner.nextInt();
 
-        System.out.println(getTimeOfYear(month));
+            if (month == 2 && day > 29 || day > 31) {
+                throw new Exception("Invalid Input");
+            }
+
+            System.out.println(getTimeOfYear(month));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

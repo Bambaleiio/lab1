@@ -16,12 +16,22 @@ public class lab1_1 {
         System.out.print("Year of birth: ");
         year = scanner.nextInt();
 
-        LocalDate dateOfBirth = LocalDate.of(year, month, day);
-        LocalDate now = LocalDate.now();
+        // IllegalArgumentException
+        try {
+            LocalDate dateOfBirth = LocalDate.of(year, month, day);
+            LocalDate now = LocalDate.now();
 
-        Period diff = Period.between(dateOfBirth, now);
+            Period diff = Period.between(dateOfBirth, now);
 
-        System.out.printf("%d years, %d months and %d days",
-                diff.getYears(), diff.getMonths(), diff.getDays());
+            if (diff.isNegative()) {
+                throw new Exception("Date of birth greater than today's date");
+            }
+
+            System.out.printf("%d years, %d months and %d days",
+                    diff.getYears(), diff.getMonths(), diff.getDays());
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
     }
 }

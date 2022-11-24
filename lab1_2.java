@@ -1,5 +1,6 @@
 package lw1;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class lab1_2 {
@@ -25,7 +26,9 @@ public class lab1_2 {
             System.out.print("Month: ");
             month = scanner.nextInt();
 
-            if (month == 2 && day > 29 || day > 31) {
+            if (month == 2 && day > 29 ||
+                              day > 31 ||
+                              Arrays.asList(4, 6, 9, 11).contains(month) && day > 30) {
                 throw new Exception("Invalid Input");
             }
 
